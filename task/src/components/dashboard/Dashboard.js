@@ -86,9 +86,9 @@ const handleDeleteFields = (index) =>{
   setInputFields(values);
 }
 
+return (
 
-  return (
-    <GridItem
+  <GridItem
       colStart={[1, null, null, 2, null, null]}
       colSpan={[3, null, null, 1, null, null]}
       p={1}
@@ -144,6 +144,7 @@ const handleDeleteFields = (index) =>{
                           bgGradient="linear(to-l, #01baef,#20bf55)"
                           aria-label="Call Segun"
                           size="md"
+                          borderRadius={7}
                           onClick={() => handleDeleteFields()}
                           icon={<DeleteIcon />}
                         />
@@ -155,6 +156,7 @@ const handleDeleteFields = (index) =>{
                           bgGradient="linear(to-l, #01baef,#20bf55)"
                           aria-label="Call Segun"
                           size="md"
+                          borderRadius={7}
                           onClick={() => handleAddFields()}
                           icon={<AddIcon />}
                         />
@@ -196,6 +198,12 @@ const handleDeleteFields = (index) =>{
                 </Button>
               </Box>
           </SimpleGrid>
+          {formState.isSubmitSuccessful && (
+        <Alert status="success" variant="subtle" mt={6} mb={6}>
+          <AlertIcon />
+          Check your email to complete login!
+        </Alert>
+      )}
         </FormControl>
       </form>
       </VStack>

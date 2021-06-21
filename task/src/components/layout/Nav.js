@@ -13,16 +13,16 @@ const Nav= () => {
                 {user && (
                     <>
                     <Link to ='/'>
-                        <Text fontSize="md"   fontWeight="extrabold" mr={8}>Dashboard</Text>
+                        <Text fontSize="md"   fontWeight="bold" mr={8}>Dashboard</Text>
                     </Link>
                     <Box as="button"  onClick={logout}>
-                    <Text fontSize="md" fontWeight="extrabold" mr={8}>Logout</Text>
+                    <Text fontSize="md" fontWeight="bold" mr={8}>Logout</Text>
                     </Box>
                     </>
                 )}
                 {!user && (
                   <Link to ='/login'>
-                  <Text fontSize="md" fontWeight="extrabold" mr={8}>Login</Text>
+                  <Text fontSize="md" fontWeight="bold" mr={8}>Login</Text>
               </Link>  
                 )}
             </Flex>
