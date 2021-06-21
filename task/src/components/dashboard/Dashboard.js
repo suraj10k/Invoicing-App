@@ -19,6 +19,7 @@ import {
   IconButton,
   Divider,
   Grid,
+  useToast,
 } from '@chakra-ui/react';
 import { Stack, HStack, VStack } from "@chakra-ui/react"
 import { PhoneIcon, AddIcon, WarningIcon ,CheckIcon,EmailIcon,DeleteIcon,SearchIcon,ArrowForwardIcon} from '@chakra-ui/icons'
@@ -59,6 +60,25 @@ const Dashboard = () => {
     };
     dataRef.push(customer);
   };
+
+  function ToastExample() {
+    const toast = useToast()
+    return (
+      <Button
+        onClick={() =>
+          toast({
+            title: "Account created.",
+            description: "We've created your account for you.",
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+          })
+        }
+      >
+        Show Toast
+      </Button>
+    )
+  }
 
   function Feature({ title, desc, ...rest }) {
     return (
@@ -198,12 +218,6 @@ return (
                 </Button>
               </Box>
           </SimpleGrid>
-          {formState.isSubmitSuccessful && (
-        <Alert status="success" variant="subtle" mt={6} mb={6}>
-          <AlertIcon />
-          Check your email to complete login!
-        </Alert>
-      )}
         </FormControl>
       </form>
       </VStack>
