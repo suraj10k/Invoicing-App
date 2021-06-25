@@ -69,10 +69,10 @@ import {
     )
   }
 export default function Data({customers,paid}) {
-  const [mark,setMark] = useState(0)
+  const [mark,setMark] = useState(false)
 
   const toggle = () => {
-    return setMark(1);
+    return setMark(!mark);
   }
 
   console.log(mark)
